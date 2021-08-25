@@ -1,5 +1,5 @@
 <template>
-  <div>sdf</div>
+  <div>user</div>
 </template>
 
 <script>

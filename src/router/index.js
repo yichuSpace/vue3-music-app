@@ -1,6 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import Recommend from '../views/recommend/index.vue'
+const Recommend = () => import('@/views/recommend/index.vue' /* webpackChunkName: "recommend" */)
+const Singer = () => import('@/views/singer/index.vue' /* webpackChunkName: "singer" */)
+const TopList = () => import('@/views/topList/index.vue' /* webpackChunkName: "top-list" */)
+const Search = () => import('@/views/search/index.vue' /* webpackChunkName: "search" */)
+const UserCenter = () => import('@/views/user/index.vue' /* webpackChunkName: "user" */)
+// const SingerDetail = () => import('@/views/singer-detail'/* webpackChunkName: "singer-detail" */)
+// const Album = () => import('@/views/album'/* webpackChunkName: "album" */)
+// const TopDetail = () => import('@/views/top-detail'/* webpackChunkName: "top-detail" */)
+// const UserCenter = () => import('@/views/user-center'/* webpackChunkName: "user-center" */)
 const routes = [
   {
     path: '/',
@@ -10,42 +18,34 @@ const routes = [
     path: '/recommend',
     component: Recommend,
   },
-  // {
-  //   path: '/singer',
-  //   component: Singer,
-  //   children: [
-  //     {
-  //       path: ':id',
-  //       component: SingerDetail
-  //     }
-  //   ]
-  // },
-  // {
-  //   path: '/top-list',
-  //   component: TopList,
-  //   children: [
-  //     {
-  //       path: ':id',
-  //       component: TopDetail
-  //     }
-  //   ]
-  // },
-  // {
-  //   path: '/search',
-  //   component: Search,
-  //   children: [
-  //     {
-  //       path: ':id',
-  //       component: SingerDetail
-  //     }
-  //   ]
-  // },
-  // {
-  //   path: '/user',
-  //   components: {
-  //     user: UserCenter
-  //   }
-  // }
+  {
+    path: '/singer',
+    component: Singer,
+  },
+  {
+    path: '/topList',
+    component: TopList,
+    // children: [
+    //   {
+    //     path: ':id',
+    //     component: TopDetail
+    //   }
+    // ]
+  },
+  {
+    path: '/search',
+    component: Search,
+    // children: [
+    //   {
+    //     path: ':id',
+    //     component: SingerDetail
+    //   }
+    // ]
+  },
+  {
+    path: '/user',
+    components: UserCenter,
+  },
 ]
 
 const router = createRouter({
